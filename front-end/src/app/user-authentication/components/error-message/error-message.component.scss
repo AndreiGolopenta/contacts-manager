@@ -1,0 +1,35 @@
+@import '../../../../assets/scss/variables';
+
+:host {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    flex: 0 1 75%;
+    box-shadow: $box-shadow-3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    position: relative;
+    top: 2rem;
+    border-radius: 4px;
+    color: $color-white;
+
+    &__icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 1rem;
+    }
+
+    &__text {
+        flex: 1;
+        font-size: 1.4rem;
+    }
+
+    &__close {
+        cursor: pointer;
+    }
+}

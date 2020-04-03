@@ -1,0 +1,60 @@
+@import '../../../../assets/scss/variables';
+
+.form {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 5rem;
+    flex-wrap: wrap;
+
+    &__category {
+        flex: 0 1 40%;
+        display: flex;
+        flex-direction: column;
+        color: $color-text;
+
+        &__input {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__actions {
+        flex: 0 1 87%;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 2rem;
+        color: $color-blue;
+
+        button[type=button] {
+            color: $color-red;
+            margin-left: 1rem;
+        }
+    }
+
+    &__radio-group {
+
+        &__title {
+            margin-bottom: 1rem;
+        }
+
+        &__input {
+            display: none;
+            
+            &:checked + .form__radio-group__label {
+                color: $color-white;
+                background-color: $color-blue;
+            }
+        }
+
+        &__label {
+            padding: 0.6rem 1.2rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            background-color: $color-grey;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 0.6rem;
+            margin-right: 0.6rem;
+        }
+    }
+
+}

@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="left-side">
+        <h1 class="left-side__title">
+            Don't have an account ?
+        </h1>
+        <p class="left-side__text">
+            Get access to all the features by creating an account now.
+        </p>
+        <button 
+            mat-stroked-button 
+            class="left-side__button"
+            (click)="userSignUpSignIn()">
+            Sign Up
+        </button>
+    </div>
+    <div class="right-side">
+        <h1 class="right-side__title">
+            Have an account?
+        </h1>
+        <p class="right-side__text">
+            Sign in with an existing account using your email and password.
+        </p>
+        <button 
+            mat-stroked-button 
+            class="right-side__button"
+            (click)="userSignUpSignIn()">
+            Sign In
+        </button>
+    </div>
+    <div class="form-container" [@signInSignUp]="logInSignUp ? 'final' : 'initial'">
+        <div class="form-container__message" *ngIf="errorMessage">
+            <app-error-message 
+                [data]="message"
+                (closeErrorMessage)="handleCloseError()">
+            </app-error-message>
+        </div>
+        <ng-container *ngIf="logInSignUp; else signIn">
+            <app-user-sign-up (userSignUp)="handleSignUp($event)">
+            </app-user-sign-up>
+        </ng-container>
+        <ng-template #signIn>
+            <app-user-sign-in (userSignIn)="handleSignIn($event)">
+            </app-user-sign-in>
+        </ng-template>
+    </div>
+</div>

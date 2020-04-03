@@ -1,0 +1,7 @@
+<div class="container" [routerLink]="['/dashboard', contact._id]">
+    <div class="container__name">{{ contact.name }}</div>
+    <div class="container__tag" *ngIf="contact.tagSelect">
+        {{ contact.tagSelect }}
+    </div>
+    <div class="container__email">{{ contact.email }}</div>
+</div>

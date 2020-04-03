@@ -1,0 +1,23 @@
+<div class="dialog">
+    <h1 class="dialog__title">Delete Confirmation</h1>
+    <div class="dialog__message">
+        Are you sure you want to delete contact: <strong>{{ data }}</strong> ?
+    </div>
+    <div class="dialog__actions">
+        <button
+            class="dialog__actions__close"
+            mat-stroked-button
+            (click)="onNoClick()"
+        >
+            Close
+        </button>
+        <button
+            class="dialog__actions__delete"
+            mat-stroked-button
+            [mat-dialog-close]="delete"
+            cdkFocusInitial
+        >
+            Delete
+        </button>
+    </div>
+</div>

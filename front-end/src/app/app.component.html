@@ -1,0 +1,16 @@
+<div class="app">
+    <div class="app__navigation" [class.app__navigation--show]="token$ | async">
+        <app-navigation></app-navigation>
+    </div>
+    <div class="app__main">
+        <header class="app__main__header" [class.app__main__header--show]="token$ | async">
+            <app-header 
+                [email]="email$ | async"
+                (userLogout)="logout()">
+            </app-header>
+        </header>
+        <div class="app__main__outlet">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

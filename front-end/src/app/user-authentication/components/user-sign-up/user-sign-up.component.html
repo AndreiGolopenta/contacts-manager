@@ -1,0 +1,19 @@
+<form class="form" [formGroup]="form" novalidate (ngSubmit)="signUp()">
+    <h1>
+        Sign Up
+    </h1>
+    <ng-container *ngFor="let input of formInputs">
+        <app-input-field [data]="input" [parent]="form"> </app-input-field>
+    </ng-container>
+    <mat-error *ngIf="repeatPasswordError" class="form__password-check-error">
+        The two given values are not <strong>identical</strong>.
+    </mat-error>
+    <button
+        mat-stroked-button
+        [disabled]="form.invalid"
+        type="submit"
+        class="form__button"
+    >
+        Sign Up
+    </button>
+</form>

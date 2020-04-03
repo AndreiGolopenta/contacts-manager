@@ -1,0 +1,10 @@
+@import '../../../../assets/scss/variables';
+
+.list {
+    list-style: none;
+    padding: 0 6rem;
+
+    &__entry:not(:last-child) {
+        border-bottom: 1px solid $color-grey-light-4;
+    }
+}

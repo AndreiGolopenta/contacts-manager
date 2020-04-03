@@ -1,0 +1,9 @@
+<form class="form" [formGroup]="form" novalidate (ngSubmit)="signIn()">
+    <h1>
+        Sign In
+    </h1>
+    <ng-container *ngFor="let input of formInputs">
+        <app-input-field [data]="input" [parent]="form"> </app-input-field>
+    </ng-container>
+    <button mat-stroked-button type="submit" class="form__button">Sign In</button>
+</form>

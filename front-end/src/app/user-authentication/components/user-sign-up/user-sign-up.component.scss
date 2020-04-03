@@ -1,0 +1,14 @@
+@import '../../../../assets/scss/variables';
+@import '../../../../assets//scss/mixins';
+
+@include registrationForm;
+
+.form {
+    position: relative;
+
+    &__password-check-error {
+        position: absolute;
+        font-size: 75%;
+        top: 21.5rem;
+    }
+}

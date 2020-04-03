@@ -1,0 +1,47 @@
+@import '../assets/scss/variables';
+
+.app {
+    height: 100vh;
+
+    &__navigation {
+        position: fixed;
+        width: 24rem;
+        display: none;
+
+        &--show {
+            display: block;
+            height: 100%;
+            background-color: $color-white;
+            border-right: 1px solid $color-grey-light-4;
+            box-shadow: $box-shadow-3;
+        }
+    }
+
+    &__main {
+        width: calc(100vw - 24rem);
+        height: calc(100% - 6rem);
+
+        &__header {
+            position: fixed;
+            left: 24rem;
+            width: inherit;
+            
+            height: 6rem;
+            display: none;
+            z-index: 2;
+            border-bottom: 1px solid $color-grey-light-4;
+
+            &--show {
+                display: block;
+            }
+        }
+
+        &__outlet {
+            height: inherit;
+            width: inherit;
+            position: relative;
+            left: 24rem;
+            top: 6rem;
+        }
+    }
+}

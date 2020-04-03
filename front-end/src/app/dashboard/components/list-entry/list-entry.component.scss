@@ -1,0 +1,28 @@
+@import '../../../../assets/scss/variables';
+
+.container {
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    color: $color-text;
+    cursor: pointer;
+
+    &__name {
+        font-weight: 500;
+        margin-right: 2rem;
+    }
+
+    &__tag {
+        margin: 0 2rem;
+        padding: 0.3rem 1.2rem;
+        border-radius: 0.5rem;
+        background-color: $color-blue;
+        color: $color-white;
+        font-size: 1.3rem;
+    }
+
+    &__email {
+        margin-left: 2rem;
+        margin-right: auto;
+    }
+}

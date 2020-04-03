@@ -1,0 +1,14 @@
+<div class="container">
+    <h1 class="container__title">
+        Contacts
+    </h1>
+    <a [routerLink]="['/dashboard/new-contact']" class="container__new-contact">
+        <span class="material-icons">add_circle_outline</span>
+        <span>New Contact</span>
+    </a>
+    <div class="container__email">{{ email }}</div>
+    <a class="container__logout" (click)="logout()">
+        <span class="material-icons">power_settings_new</span>
+        <span>Logout</span>
+    </a>
+</div>

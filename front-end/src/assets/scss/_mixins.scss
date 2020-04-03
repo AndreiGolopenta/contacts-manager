@@ -1,0 +1,35 @@
+@mixin registrationForm {
+    :host {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        height: 100%;
+    }
+    
+    .form {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 6rem;
+        color: $color-text;
+
+        & > *:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    
+        &__button {
+            margin-top: 2rem;
+        }
+    }
+}
+
+
+@mixin header-button($color) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $color;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+}

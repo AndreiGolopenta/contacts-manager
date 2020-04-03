@@ -1,0 +1,65 @@
+<form class="form" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+    <div class="form__category">
+        <h2>Personal</h2>
+        <mat-form-field
+            *ngFor="let el of inputs.personal"
+            class="form__category__input"
+        >
+            <mat-label>{{ el | uppercase }}</mat-label>
+            <input
+                [attr.type]="el === 'email' ? 'email' : 'text'"
+                matInput
+                [required]="required(el)"
+                [formControlName]="el"
+            />
+            <mat-error [ngSwitch]="el">
+                <ng-container *ngSwitchCase="'email'">
+                    <ng-container *ngIf="requiredError(el)">
+                        Email is <strong>required</strong>.
+                    </ng-container>
+                    <ng-container *ngIf="emailError(el)">
+                        Please enter a <strong>valid</strong> email address.
+                    </ng-container>
+                </ng-container>
+                <ng-container *ngSwitchCase="'name'">
+                    <ng-container *ngIf="requiredError(el)">
+                        Password is <strong>required</strong>.
+                    </ng-container>
+                </ng-container>
+            </mat-error>
+        </mat-form-field>
+        <div class="form__radio-group">
+            <div class="form__radio-group__title">TAG</div>
+            <ng-container *ngFor="let tag of tags">
+                <input
+                    type="radio"
+                    [id]="tag"
+                    formControlName="tagSelect"
+                    class="form__radio-group__input"
+                    [value]="tag"
+                />
+                <label [for]="tag" class="form__radio-group__label">
+                    {{ tag | titlecase }}
+                </label>
+            </ng-container>
+        </div>
+    </div>
+    <div class="form__category">
+        <h2>Social</h2>
+        <mat-form-field
+            *ngFor="let el of inputs.social"
+            class="form__category__input"
+        >
+            <mat-label>{{ el | uppercase }}</mat-label>
+            <input type="text" matInput [formControlName]="el" />
+        </mat-form-field>
+    </div>
+    <div class="form__actions">
+        <button mat-stroked-button type="submit" [disabled]="form.invalid">
+            {{ data ? 'Update' : 'Create contact' }}
+        </button>
+        <button mat-stroked-button type="button" *ngIf="data" (click)="handleDeleteContact()">
+            Delete
+        </button>
+    </div>
+</form>

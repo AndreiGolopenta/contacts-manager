@@ -1,0 +1,33 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/variables';
+
+.container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: $color-text;
+    background-color: $color-grey-light-1;
+
+    .material-icons {
+        font-size: 1.8rem;
+        margin-right: 0.5rem;
+    }
+
+    &__title {
+        margin: 0 3rem 0 6rem;
+    }
+
+    &__new-contact {
+        @include header-button($color-blue);
+        margin-right: auto;
+    }
+
+    &__email {
+        margin: 0 3rem;
+    }
+
+    &__logout {
+        @include header-button($color-red);
+        margin-right: 6rem;
+    }
+}

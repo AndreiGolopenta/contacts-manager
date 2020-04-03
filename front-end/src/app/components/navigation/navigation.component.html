@@ -1,0 +1,22 @@
+<div class="container">
+    <img
+        class="container__image"
+        src="../../../assets/logo/image.png"
+        alt="logo"
+    />
+</div>
+<ul class="nav">
+    <li class="nav__item" *ngFor="let el of navigation">
+        <a
+            [routerLink]="el.route"
+            class="nav__item__link"
+            routerLinkActive="nav__item__link--active"
+            [routerLinkActiveOptions]="{ exact: el.exact }"
+        >
+            <span class="material-icons nav__item__link__icon">{{
+                el.icon
+            }}</span>
+            <span class="nav__item__link__text">{{ el.name }}</span>
+        </a>
+    </li>
+</ul>

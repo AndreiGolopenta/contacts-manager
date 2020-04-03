@@ -1,0 +1,27 @@
+@import '../../../../assets/scss/variables';
+
+.dialog {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &__message {
+        margin-top: auto;
+    }
+
+    &__actions {
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+        display: flex;
+        justify-content: flex-end;
+
+        &__close {
+            color: $color-blue;
+        }
+
+        &__delete {
+            color: $color-red;
+            margin-left: 1rem;
+        }
+    }
+}

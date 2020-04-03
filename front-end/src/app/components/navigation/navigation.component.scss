@@ -1,0 +1,54 @@
+@import '../../../assets/scss/variables';
+
+.container {
+    display: flex;
+    justify-content: center;
+
+    &__image {
+        width: 80%;
+        padding: 1rem 0;
+    }
+}
+
+.nav {
+    list-style: none;
+    width: 80%;
+    margin: 0 auto;
+    color: $color-text;
+
+    *:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+
+    &__item {
+        padding: 0.7rem 0;
+        cursor: pointer;
+
+        &__link {
+            position: relative;
+            text-decoration: none;
+            color: $color-text;
+            font-weight: 500;
+
+            &--active {
+                color: $color-blue;
+                font-weight: 600;
+            }
+
+            &__icon {
+                position: absolute;
+                top: 50%;
+                left: 1rem;
+                transform: translateY(-50%);
+                display: inline-block;
+            }
+
+            &__text {
+                margin-left: 4rem;
+                display: inline-block;
+            }
+        }
+    }
+}
+
+

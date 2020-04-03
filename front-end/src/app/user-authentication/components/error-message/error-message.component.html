@@ -1,0 +1,14 @@
+<div 
+    class="container"
+    [ngStyle]="{ 'background': data.color }">
+    <mat-icon class="container__icon">{{ data.icon }}</mat-icon>
+    <span class="container__text">{{ data.message }}</span>
+    <mat-icon 
+        class="container__close" 
+        (click)="close()"
+        (mousedown)="animateButton()"
+        (mouseout)="animateButtonReset()"
+        [@scale]="closeButtonAnimate ? 'final' : 'initial'">
+        close
+    </mat-icon>
+</div>

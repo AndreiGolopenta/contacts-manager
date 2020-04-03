@@ -1,0 +1,6 @@
+<app-form-template
+    [data]="contact$ | async"
+    (updateContact)="handleUpdateContact($event)"
+    (deleteContact)="handleDeleteContact($event)"
+>
+</app-form-template>
